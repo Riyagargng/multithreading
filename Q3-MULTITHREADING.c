@@ -6,7 +6,6 @@ int n;
 void *getdata()
 {
 
-
 	printf("\nEnter a number upto which you want to find prime numbers : \n");
 	scanf("%d",&n);
 	pthread_exit(NULL);
@@ -17,6 +16,14 @@ void *display(void *a)
 	int i,j,fact;
 	int *b=(int *)a;
 	int n=*b;
+	if(n<2)
+	{
+		printf("\ninvalid number");
+		
+	}
+	else
+	{
+	
 	printf("Prime Numbers are: \n");
     for(i=1; i<=n; i++)
     {
@@ -30,6 +37,7 @@ void *display(void *a)
             printf("%d " ,i);
     }
     pthread_exit(NULL);
+}
 }
 
 int main()
